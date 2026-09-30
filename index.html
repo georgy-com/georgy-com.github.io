@@ -1,1124 +1,1338 @@
-```html
-<!DOCTYPE HTML>
-<!--
-    Dimension by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license
-    html5up.net/license
--->
+<!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Portfolio of Nku George Ekong — Data Scientist, Data Analyst, Statistician and Statistical Researcher specializing in statistical modelling, machine learning, data analytics and quantitative research." name="description"/>
+<meta content="Nku George Ekong" name="author"/>
+<title>Nku George Ekong | Data Scientist &amp; Statistical Researcher</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --bg: #07111f;
+            --bg-soft: #0b1728;
+            --card: rgba(15, 30, 50, 0.78);
+            --card-solid: #0e1d31;
+            --text: #e9f2ff;
+            --muted: #9eb0c7;
+            --line: rgba(158, 176, 199, 0.16);
+            --accent: #57c7ff;
+            --accent-2: #7c83ff;
+            --accent-soft: rgba(87, 199, 255, 0.12);
+            --white: #ffffff;
+            --max: 1180px;
+            --radius: 20px;
+            --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+        }
 
-    <title>Nku George Ekong | Data Scientist & Statistical Researcher</title>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <meta charset="utf-8" />
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 88px;
+        }
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, user-scalable=no" />
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 12% 5%, rgba(87, 199, 255, 0.09), transparent 28%),
+                radial-gradient(circle at 90% 15%, rgba(124, 131, 255, 0.10), transparent 28%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
 
-    <meta name="description"
-          content="Portfolio of Nku George Ekong, Data Scientist, Analyst and Statistical Researcher specializing in statistical modelling, machine learning, data analytics and quantitative research." />
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(to bottom, black, transparent 80%);
+            z-index: -1;
+        }
 
-    <meta name="author"
-          content="Nku George Ekong" />
+        a { color: inherit; text-decoration: none; }
 
-    <link rel="stylesheet" href="assets/css/main.css" />
+        img {
+            display: block;
+            max-width: 100%;
+        }
 
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
 
+        /* NAVIGATION */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(7, 17, 31, 0.78);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(18px);
+        }
+
+        .nav-inner {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        .brand span { color: var(--accent); }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            padding: 9px 12px;
+            border-radius: 10px;
+            color: var(--muted);
+            font-size: 0.84rem;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+            background: var(--accent-soft);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 70px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 6.2rem);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            max-width: 850px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: transparent;
+            background: linear-gradient(90deg, var(--accent), #b3a6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-title {
+            margin-top: 24px;
+            font-size: clamp(1.15rem, 2vw, 1.5rem);
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .hero-description {
+            margin-top: 20px;
+            max-width: 720px;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .hero-actions,
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 11px 18px;
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            color: var(--text);
+            background: rgba(255,255,255,0.025);
+            font-size: 0.87rem;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: rgba(87, 199, 255, 0.45);
+            background: var(--accent-soft);
+        }
+
+        .button.primary {
+            border-color: transparent;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #06101c;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            justify-self: center;
+        }
+
+        .hero-image-wrap::before {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            border: 1px solid rgba(87,199,255,0.22);
+            border-radius: 34px;
+            transform: rotate(5deg);
+        }
+
+        .profile-photo {
+            width: min(350px, 75vw);
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 28px;
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .hero-stat {
+            position: absolute;
+            right: -24px;
+            bottom: 26px;
+            background: rgba(8, 19, 33, 0.92);
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            padding: 14px 17px;
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.25rem;
+        }
+
+        .hero-stat span {
+            color: var(--muted);
+            font-size: 0.72rem;
+        }
+
+        .scroll-note {
+            margin-top: 60px;
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        /* SECTIONS */
+        section.site-section {
+            padding: 105px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 46px;
+        }
+
+        .section-kicker {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.74rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 620px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .section-image {
+            width: 100%;
+            max-height: 470px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .about-copy p + p { margin-top: 18px; }
+
+        .mini-label {
+            color: var(--accent);
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+        }
+
+        /* SKILLS */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card,
+        .project-card,
+        .research-card,
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 28px;
+            backdrop-filter: blur(14px);
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover,
+        .project-card:hover,
+        .research-card:hover,
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(87,199,255,0.28);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card h3,
+        .project-card h3,
+        .research-card h3,
+        .experience-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            list-style: none;
+        }
+
+        .skill-list li,
+        .tag {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(87,199,255,0.13);
+            color: #ccecff;
+            font-size: 0.75rem;
+        }
+
+        /* EXPERIENCE */
+        .timeline {
+            position: relative;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: linear-gradient(var(--accent), rgba(87,199,255,0.08));
+        }
+
+        .experience-item {
+            position: relative;
+            padding-left: 48px;
+            margin-bottom: 34px;
+        }
+
+        .experience-item:last-child { margin-bottom: 0; }
+
+        .timeline-dot {
+            position: absolute;
+            left: 4px;
+            top: 7px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 5px rgba(87,199,255,0.10);
+        }
+
+        .experience-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 28px 30px;
+        }
+
+        .experience-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
+            margin-bottom: 17px;
+        }
+
+        .experience-role {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .experience-date {
+            color: var(--muted);
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .experience-company {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: -8px;
+            margin-bottom: 15px;
+        }
+
+        .experience-card ul {
+            padding-left: 19px;
+            color: var(--muted);
+        }
+
+        .experience-card li + li { margin-top: 10px; }
+
+        /* RESEARCH */
+        .research-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 20px;
+        }
+
+        .research-card p + p { margin-top: 14px; }
+
+        .research-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .research-list li {
+            padding: 12px 14px;
+            border-left: 2px solid var(--accent);
+            background: rgba(255,255,255,0.025);
+            color: var(--muted);
+        }
+
+        /* PROJECTS */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card.featured {
+            grid-column: span 2;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 22px;
+            border: 1px solid var(--line);
+        }
+
+        .project-card.featured .project-image {
+            height: 330px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+        }
+
+        .project-card p + p { margin-top: 10px; }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .project-card .actions { margin-top: 22px; }
+
+        /* EDUCATION / ABOUT DETAILS */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .detail-card {
+            padding: 23px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        .detail-card strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .detail-card span { color: var(--muted); }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 20px;
+        }
+
+        .contact-links {
+            list-style: none;
+            display: grid;
+            gap: 11px;
+            margin-top: 22px;
+        }
+
+        .contact-links a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 15px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            color: var(--muted);
+            transition: 0.25s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--text);
+            border-color: rgba(87,199,255,0.35);
+            background: var(--accent-soft);
+        }
+
+        .contact-email {
+            color: var(--accent);
+            word-break: break-word;
+        }
+
+        footer {
+            padding: 30px 0 45px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 950px) {
+            .hero-grid,
+            .about-grid,
+            .research-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-wrap {
+                order: -1;
+            }
+
+            .hero {
+                padding-top: 135px;
+            }
+
+            .profile-photo {
+                width: 250px;
+            }
+
+            .hero-stat { right: -10px; }
+
+            .section-heading {
+                align-items: start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .nav-inner {
+                min-height: auto;
+                padding: 13px 0;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 2px;
+            }
+
+            .nav-links a { white-space: nowrap; }
+
+            .hero h1 { font-size: clamp(2.8rem, 13vw, 4.7rem); }
+
+            .skill-grid,
+            .project-grid,
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.featured { grid-column: span 1; }
+
+            .project-image,
+            .project-card.featured .project-image {
+                height: 235px;
+            }
+
+            section.site-section { padding: 78px 0; }
+
+            .experience-meta {
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .experience-date { white-space: normal; }
+
+            .container {
+                width: min(var(--max), calc(100% - 28px));
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
+        }
+    </style>
 </head>
+<body>
+<header class="site-nav">
+<div class="container nav-inner">
+<a class="brand" href="#home">NGE<span>.</span></a>
+<nav aria-label="Main navigation">
+<ul class="nav-links">
 
 
-<body class="is-preload">
 
 
-<!-- =========================================
-     WRAPPER
-========================================= -->
 
-<div id="wrapper">
 
 
-    <!-- =========================================
-         HEADER / LANDING PAGE
-    ========================================== -->
-
-    <header id="header">
-
-
-        <!-- Professional Photograph -->
-
-        <div class="profile-photo">
-
-            <img src="images/George pic.jpg"
-                 alt="Nku George Ekong - Data Scientist and Statistical Researcher" />
-
-        </div>
-
-
-        <!-- Professional Identity -->
-
-        <div class="content">
-
-            <div class="inner">
-
-                <h1>Nku George Ekong</h1>
-
-                <p>
-                    <strong>
-                        Data Scientist, Analyst & Statistical Researcher
-                    </strong>
-                </p>
-
-                <p>
-                    Applying statistical modelling, machine learning and
-                    computational methods to transform complex data into
-                    evidence-based solutions for health, education,
-                    business and sustainable development.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================================
-             MAIN NAVIGATION
-        ========================================== -->
-
-        <nav>
-
-            <ul>
-
-                <li>
-                    <a href="#intro">Home</a>
-                </li>
-
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#research">Research</a>
-                </li>
-
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =========================================
-         MAIN CONTENT
-    ========================================== -->
-
-    <div id="main">
-
-
-        <!-- =========================================
-             HOME / INTRO
-        ========================================== -->
-
-        <article id="intro">
-
-            <h2 class="major">Welcome</h2>
-
-            <span class="image main">
-                <img src="images/Datascience.jpeg"
-                     alt="Nku George Ekong" />
-            </span>
-
-            <p>
-
-                I am a Data Scientist, Analyst and Statistical Researcher
-                with a strong foundation in Statistics, quantitative research,
-                machine learning and data analytics.
-
-            </p>
-
-            <p>
-
-                My work focuses on transforming complex datasets into
-                meaningful insights, predictive models and evidence-based
-                solutions across health, education, business and
-                sustainable development.
-
-            </p>
-
-            <p>
-
-                My interests span statistical learning, biostatistics,
-                predictive modelling, machine learning, time-series analysis
-                and computational research.
-
-            </p>
-
-            <ul class="actions">
-
-                <li>
-                    <a href="#projects" class="button primary">
-                        Explore Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#research" class="button">
-                        Research
-                    </a>
-                </li>
-
-            </ul>
-
-        </article>
-		
-
-
-
-        <!-- =========================================
-             PROJECTS
-        ========================================== -->
-
-        <article id="projects">
-
-            <h2 class="major">Selected Projects</h2>
-
-            <p>
-
-                A selection of data science, machine learning,
-                statistical analysis and business intelligence projects
-                demonstrating practical application of quantitative methods.
-
-            </p>
-
-
-            <!-- PROJECT 1: LOGISTICS -->
-
-            <section>
-
-                <h3>Logistics Operations Intelligence</h3>
-
-                <span class="image main">
-
-                    <img src="images/Logistics.jpeg"
-                         alt="Logistics Operations Dashboard" />
-
-                </span>
-
-                <p>
-
-                    <strong>
-                        Optimising Fleet and Logistics Operations Through
-                        Data-Driven Decision Intelligence.
-                    </strong>
-
-                </p>
-
-                <p>
-
-                    Developed an interactive logistics analytics solution
-                    focused on fleet operations, drivers, trucks, customers,
-                    facilities and operational performance.
-
-                </p>
-
-                <ul>
-
-                    <li>Power BI</li>
-                    <li>Data Modelling</li>
-                    <li>DAX</li>
-                    <li>Operational Analytics</li>
-                    <li>Interactive Dashboards</li>
-
-                </ul>
-
-                <ul class="actions">
-
-                    <li>
-
-                        <a href="https://github.com/georgy-com/Logistics-Operations-Capstone-Project-.git"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="button primary">
-
-                            View on GitHub
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </section>
-
-
-
-            <!-- PROJECT 2: DIABETES -->
-
-            <section>
-
-                <h3>Diabetes Risk Prediction</h3>
-
-                <span class="image main">
-
-                    <img src="images/diabet.jpg"
-                         alt="Diabetes Risk Prediction Project" />
-
-                </span>
-
-                <p>
-
-                    <strong>
-                        Predicting Diabetes Risk Using Routine Clinical
-                        and Anthropometric Indicators.
-                    </strong>
-
-                </p>
-
-                <p>
-
-                    Applied statistical and machine-learning techniques
-                    to investigate patterns associated with diabetes risk
-                    using routinely available clinical and anthropometric
-                    indicators.
-
-                </p>
-
-                <ul>
-
-                    <li>Python</li>
-                    <li>Exploratory Data Analysis</li>
-                    <li>Statistical Modelling</li>
-                    <li>Machine Learning</li>
-                    <li>Model Evaluation</li>
-
-                </ul>
-
-                <ul class="actions">
-
-                    <li>
-
-                        <a href="https://github.com/georgy-com/Diabetes-Risk-Prediction-Using-Routine-Clinical-and-Anthropometric-Indicators.git"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="button primary">
-
-                            View on GitHub
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </section>
-
-
-
-            <!-- PROJECT 3: CUSTOMER CHURN -->
-
-            <section>
-
-                <h3>Customer Churn Analysis & Prediction</h3>
-
-                <span class="image main">
-
-                    <img src="images/Churn.png"
-                         alt="Customer Churn Analysis Dashboard" />
-
-                </span>
-
-                <p>
-
-                    <strong>
-                        Identifying Customer Churn Drivers Through
-                        Statistical Analysis, Predictive Modelling
-                        and Business Intelligence.
-                    </strong>
-
-                </p>
-
-                <p>
-
-                    Analysed customer demographics, contracts, services,
-                    payment behaviour and other characteristics to identify
-                    patterns associated with customer attrition.
-
-                </p>
-
-                <ul>
-
-                    <li>Power BI</li>
-                    <li>SQL</li>
-					<li>Excel</li>
-                    <li>Predictive Analytics</li>
-                    <li>Customer Segmentation</li>
-                    <li>Business Intelligence</li>
-
-                </ul>
-
-                <ul class="actions">
-
-                    <li>
-
-                        <a href="https://github.com/georgy-com/TeleCom-Customer-Churn-Analysis.git"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="button primary">
-
-                            View on GitHub
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </section>
-
-
-
-            <!-- PROJECT 4: CRUDE OIL -->
-
-            <section>
-
-                <h3>Nigerian Crude Oil Forecasting</h3>
-				
-                <span class="image main">
-
-                    <img src="images/oil.avif"
-                         alt="Nigerian Crude Oil Forecasting" />
-
-                </span>
-
-                <p>
-
-                    <strong>
-                        Forecasting Nigerian Crude Oil Production and
-                        Exports Using Time-Series Analysis.
-                    </strong>
-
-                </p>
-
-                <p>
-
-                    Applied time-series methods to examine historical
-                    trends in Nigerian crude oil production, exports
-                    and related economic indicators.
-
-                </p>
-
-                <ul>
-
-                    <li>Python</li>
-                    <li>Time-Series Analysis</li>
-                    <li>ARIMA</li>
-                    <li>Forecasting</li>
-                    <li>Model Diagnostics</li>
-
-                </ul>
-
-			<ul class="actions">
-
-                    <li>
-
-                        <a href="https://github.com/georgy-com/Crude-oil-Time-series-Modelling.git"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="button primary">
-
-                            View on GitHub
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-            </section>
-        
-<!-- PROJECT 5: COVID-19 Unemployment Analysis in India -->
-
-<section>
-
-    <h3>COVID-19 Unemployment Analysis in India</h3>
-
-    <p>
-        <strong>
-            Time-Series Analysis of Unemployment Trends During the COVID-19 Pandemic in India.
-        </strong>
-		<span class="image main">
-
-                    <img src="images/covid19.jpg"
-                         alt="COVID-19 Unemployment Analysis in India" />
-
-                </span>
-
-    </p>
-
-    <p>
-        Analyzed unemployment trends in India during the COVID-19 pandemic
-        using time-series methods to examine changes in unemployment patterns
-        over time. The project explored temporal trends and fluctuations in
-        unemployment and demonstrated the application of statistical analysis
-        to real-world economic data.
-    </p>
-
-    <ul>
-        <li>Time-Series Analysis</li>
-        <li>Trend Analysis</li>
-        <li>Exploratory Data Analysis</li>
-        <li>Statistical Analysis</li>
-        <li>Data Visualization</li>
-        <li>Python</li>
-        <li>Pandas & NumPy</li>
-        <li>Matplotlib</li>
-    </ul>
-
-	<ul class="actions">
-
-                    <li>
-
-                        <a href="https://github.com/georgy-com/COVID19_Unemployment_Analysis_in_India.git"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="button primary">
-
-                            View on GitHub
-
-                        </a>
-
-                    </li>
-</section>
-
-
-        </article>
-		
-<!-- =========================================
-     RESEARCH
-========================================== -->
-
-<article id="research">
-
-    <h2 class="major">Research</h2>
-
-    <span class="image main">
-
-        <img src="images/Statistics.jpeg"
-             alt="Statistical Research and Data Science" />
-
-    </span>
-
-    <p>
-
-        My research interests lie at the intersection of
-        statistics, data science, machine learning and
-        evidence-based decision making for sustainable outcomes.
-
-    </p>
-
-
-    <section>
-
-        <h3 class="major">Research Interests</h3>
-
-        <ul class="alt">
-
-            <li>Scientific Research Methods</li>
-
-            <li>Statistical Data Analysis</li>
-
-            <li>Supervised &amp; Unsupervised Machine Learning</li>
-
-            <li>Big Data Analytics</li>
-
-            <li>Survival Analysis</li>
-
-            <li>Biostatistics &amp; Health Data Science</li>
-
-            <li>Quantitative Research</li>
-
-        </ul>
-
-    </section>
-
-
-    <section>
-
-        <h3 class="major">Research Focus</h3>
-
-        <p>
-
-            I am particularly interested in developing statistical
-            and data-intensive computational approaches that can support
-            research and decision-making in health, education and other
-            sustainable-development contexts.
-
-        </p>
-
-    </section>
-
-
-    <!-- Research Actions -->
-
-    <ul class="actions">
-
-        <!-- Discuss Research -->
-        <li>
-
-            <a href="#contact"
-               class="button primary">
-
-                Discuss Research
-
-            </a>
-
-        </li>
-
-        <!-- ORCID -->
-        <li>
-
-            <a href="https://orcid.org/0009-0006-4637-4632"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-
-                ORCID
-
-            </a>
-
-        </li>
-
-    </ul>
-
-</article>
-<!-- =========================================
-     SKILLS & COMPETENCIES
-========================================== -->
-
-<article id="skills">
-
-    <h2 class="major">Skills &amp; Competencies</h2>
-
-    <p>
-
-        I combine statistical expertise, computational techniques and
-        data-driven problem solving to transform complex data into
-        meaningful insights that support research, business intelligence
-        and evidence-based decision-making.
-
-    </p>
-
-
-    <!-- STATISTICS & RESEARCH METHODS -->
-
-    <section>
-
-        <h3 class="major">
-            Statistical &amp; Research Methods
-        </h3>
-
-        <ul class="alt">
-
-            <li>
-                Statistical Inference &amp; Hypothesis Testing
-            </li>
-
-            <li>
-                Regression Analysis &amp; Predictive Modelling
-            </li>
-
-            <li>
-                Multivariate &amp; Factor Analysis
-            </li>
-
-            <li>
-                Time-Series Analysis &amp; Forecasting
-            </li>
-
-            <li>
-                Probability Distributions &amp; Statistical Modelling
-            </li>
-
-            <li>
-                Bayesian &amp; Causal Inference
-            </li>
-
-            <li>
-                Biostatistical &amp; Quantitative Research Methods
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- DATA SCIENCE & MACHINE LEARNING -->
-
-    <section>
-
-        <h3 class="major">
-            Data Science &amp; Machine Learning
-        </h3>
-
-        <ul class="alt">
-
-            <li>
-                Data Cleaning, Preparation &amp; Preprocessing
-            </li>
-
-            <li>
-                Exploratory Data Analysis
-            </li>
-
-            <li>
-                Feature Engineering &amp; Selection
-            </li>
-
-            <li>
-                Supervised &amp; Unsupervised Machine Learning
-            </li>
-
-            <li>
-                Classification &amp; Regression Modelling
-            </li>
-
-            <li>
-                Model Training, Testing &amp; Tuning
-            </li>
-
-            <li>
-                Model Evaluation &amp; Validation
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- PROGRAMMING & ANALYTICS -->
-
-    <section>
-
-        <h3 class="major">
-            Programming &amp; Analytics
-        </h3>
-
-        <ul class="alt">
-
-            <li>
-                <strong>Python:</strong>
-                Pandas, NumPy, Matplotlib, Seaborn &amp; Scikit-learn
-            </li>
-
-            <li>
-                <strong>R, SPSS &amp; Minitab:</strong>
-                Statistical Computing, Modelling &amp; Data Analysis
-            </li>
-
-            <li>
-                <strong>SQL:</strong>
-                Data Querying, Transformation &amp; Analysis
-            </li>
-
-            <li>
-                <strong>Power BI:</strong>
-                DAX, Power Query, Data Modelling &amp; Interactive Dashboards
-            </li>
-
-            <li>
-                <strong>Microsoft Excel:</strong>
-                Data Analysis, Reporting &amp; Visualisation
-            </li>
-
-            <li>
-                <strong>Google Colab &amp; Jupyter Notebook:</strong>
-                Computational Research &amp; Machine Learning Workflows
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- DATA VISUALISATION & BUSINESS INTELLIGENCE -->
-
-    <section>
-
-        <h3 class="major">
-            Data Visualisation &amp; Business Intelligence
-        </h3>
-
-        <ul class="alt">
-
-            <li>
-                Interactive Power BI Dashboard Development
-            </li>
-
-            <li>
-                Data Storytelling &amp; Insight Communication
-            </li>
-
-            <li>
-                Business &amp; Operational Performance Analytics
-            </li>
-
-            <li>
-                KPI Development, Tracking &amp; Monitoring
-            </li>
-
-            <li>
-                Statistical Data Visualisation
-            </li>
-
-            <li>
-                Evidence-Based Decision Support
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- RESEARCH DOMAINS -->
-
-    <section>
-
-        <h3 class="major">
-            Research Domains
-        </h3>
-
-        <p>
-
-            <span class="button small">
-                Scientific Research Methods
-            </span>
-
-            <span class="button small">
-                Statistical Computing
-            </span>
-
-            <span class="button small">
-                Machine Learning &amp; AI
-            </span>
-
-            <span class="button small">
-                Predictive Modelling
-            </span>
-
-            <span class="button small">
-                Bayesian &amp; Causal Inference
-            </span>
-
-            <span class="button small">
-                Health Data Science
-            </span>
-
-            <span class="button small">
-                Biostatistics
-            </span>
-
-            <span class="button small">
-                Business Intelligence
-            </span>
-
-        </p>
-
-    </section>
-
-
-    <!-- CERTIFICATIONS -->
-
-    <ul class="actions">
-
-        <li>
-            <a href="https://docs.google.com/presentation/d/1sIMxyHuVI1g1e2g33wZNTm-Cl20V0dZY/edit?usp=sharing&ouid=101484369057490016983&rtpof=true&sd=true"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-
-                My Certifications
-
-            </a>
-        </li>
-
-    </ul>
-
-
-</article>
-<!-- =========================================
-     ABOUT
-========================================== -->
-
-<article id="about">
-
-    <h2 class="major">About Me</h2>
-
-    <span class="image main">
-
-        <img src="images/About.jpeg"
-             alt="Nku George Ekong" />
-
-    </span>
-
-
-    <p>
-
-        I am a Statistician, Data Scientist and Statistical Researcher
-        passionate about transforming data into meaningful insights
-        through statistical modelling, machine learning and
-        computational methods to address real-world challenges.
-
-    </p>
-
-
-    <p>
-
-        My academic and professional journey has evolved from a strong
-        foundation in Statistics and quantitative research into Data
-        Science, Machine Learning, Artificial Intelligence, Business
-        Intelligence and data-intensive computational research.
-
-    </p>
-
-
-    <p>
-
-        I am particularly interested in applying advanced statistical
-        and computational approaches to health, education, business
-        intelligence and sustainable development, with a focus on
-        evidence-based decision-making and measurable impact.
-
-    </p>
-
-
-    <!-- ACADEMIC BACKGROUND -->
-
-    <section>
-
-        <h3 class="major">
-            Academic Background
-        </h3>
-
-        <p>
-
-            <strong>
-                B.Sc. Statistics — Second Class Upper (4.29/5.0)
-            </strong><br />
-
-            University of Calabar, Calabar, Nigeria
-
-        </p>
-
-        <p>
-
-            <strong>
-                National Diploma in Statistics — Distinction (3.61/4.0)
-            </strong><br />
-
-            Federal Polytechnic Nasarawa, Nasarawa, Nigeria
-
-        </p>
-
-    </section>
-
-
-    <!-- PROFESSIONAL DIRECTION -->
-
-    <section>
-
-        <h3 class="major">
-            Professional Direction
-        </h3>
-
-        <p>
-
-            I am developing a career at the intersection of Statistics,
-            Data Science, Artificial Intelligence, Machine Learning and
-            quantitative research. My long-term goal is to pursue advanced
-            postgraduate study and contribute to research and data-driven
-            solutions in health, education and other areas of sustainable
-            development.
-
-        </p>
-
-    </section>
-
-
-    <!-- PORTFOLIO & SERVICES -->
-
-    <ul class="actions">
-
-        <!-- Data Science Portfolio -->
-        <li>
-            <a href="http://datascienceportfol.io/NkuGeorge"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-
-                Data Science Portfolio
-
-            </a>
-        </li>
-
-        <!-- Other Services -->
-        <li>
-            <a href="https://sites.google.com/view/georgy-com/home"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-
-                Google Site 
-
-            </a>
-        </li>
-
-    </ul>
-
-
-</article>
-
-
-
-<!-- =========================================
-     CONTACT
-========================================== -->
-
-<article id="contact">
-
-    <h2 class="major">Contact</h2>
-
-    <p>
-        I am open to opportunities involving data science,
-        statistical research, machine learning, analytics,
-        business intelligence and quantitative research.
-    </p>
-
-    <!-- Contact Actions -->
-
-    <ul class="actions">
-
-        <!-- GitHub -->
-        <li>
-            <a href="https://github.com/georgy-com"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-                GitHub
-            </a>
-        </li>
-
-        <!-- LinkedIn -->
-        <li>
-            <a href="https://linkedin.com/in/geolecon"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-                LinkedIn
-            </a>
-        </li>
-
-        <!-- WhatsApp -->
-        <li>
-            <a href="https://wa.me/2349025620573"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-                WhatsApp
-            </a>
-        </li>
-
-        <!-- X / Twitter -->
-        <li>
-            <a href="https://x.com/EkongNku"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="button primary">
-                X (Twitter)
-            </a>
-        </li>
-
-    </ul>
-
-    <!-- Email Address -->
-    <p>
-        <strong>Email:</strong> nkuekong@gmail.com
-    </p>
-
-
-</article>
-
-
-    </div>
-
-
-
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-
-    <footer id="footer">
-
-        <p class="copyright">
-
-            &copy; 2026 Nku George Ekong.
-            Design:
-            <a href="https://html5up.net"
-               target="_blank"
-               rel="noopener noreferrer">
-
-                HTML5 UP
-
-            </a>.
-
-        </p>
-
-    </footer>
-
-
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#research">Research</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
 </div>
+</header>
+<main>
+<!-- HERO / HOME -->
 
+<!-- ABOUT -->
 
+<!-- SKILLS -->
 
-<!-- =========================================
-     ORIGINAL DIMENSION BACKGROUND
-========================================= -->
+<!-- EXPERIENCE -->
 
-<div id="bg"></div>
+<!-- RESEARCH -->
 
+<!-- PROJECTS -->
 
+<!-- CONTACT -->
 
-<!-- =========================================
-     SCRIPTS
-========================================= -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<p class="eyebrow">Data Science • Statistics • Research</p>
+<h1>
+                    Nku George
+                    <span>Ekong.</span>
+</h1>
+<p class="hero-title">
+                    Data Scientist, Analyst &amp; Statistical Researcher
+                </p>
+<p class="hero-description">
+                    Applying statistical modelling, machine learning and computational
+                    methods to transform complex data into evidence-based solutions
+                    for health, education, business and sustainable development.
+                </p>
+<div class="hero-actions">
+<a class="button primary" href="#research">View Research</a>
+<a class="button" href="#projects">Explore Projects</a>
+<a class="button" href="#contact">Get In Touch</a>
+</div>
+<p class="scroll-note">↓ Scroll to explore</p>
+</div>
+<div class="hero-image-wrap">
+<img alt="Nku George Ekong - Data Scientist and Statistical Researcher" class="profile-photo" src="images/George pic.jpg"/>
+<div class="hero-stat">
+<strong>Statistics → Data Science</strong>
+<span>Research-driven analytical practice</span>
+</div>
+</div>
+</div>
+</section><section class="site-section" id="about">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="section-kicker">Get to know me</p>
+<h2>About Me</h2>
+</div>
+<p class="section-intro">
+                    A statistics-trained data professional developing at the intersection
+                    of quantitative research, machine learning and data-intensive computation.
+                </p>
+</div>
+<div class="about-grid">
+<img alt="Nku George Ekong" class="section-image" src="images/About.jpeg"/>
+<div class="about-copy">
+<p>
+                        I am a Statistician, Data Scientist and Statistical Researcher
+                        passionate about transforming data into meaningful insights through
+                        statistical modelling, machine learning and computational methods
+                        to address real-world challenges.
+                    </p>
+<p>
+                        My academic and professional journey has evolved from a strong
+                        foundation in Statistics and quantitative research into Data Science,
+                        Machine Learning, Artificial Intelligence, Business Intelligence
+                        and data-intensive computational research.
+                    </p>
+<p>
+                        I am particularly interested in applying advanced statistical and
+                        computational approaches to health, education, business intelligence
+                        and sustainable development, with a focus on evidence-based
+                        decision-making and measurable impact.
+                    </p>
+<div class="detail-grid">
+<div class="detail-card">
+<span class="mini-label">B.Sc. Statistics</span>
+<strong>Second Class Upper — 4.29/5.0</strong>
+<span>University of Calabar, Nigeria</span>
+</div>
+<div class="detail-card">
+<span class="mini-label">National Diploma</span>
+<strong>Statistics — Distinction</strong>
+<span>Federal Polytechnic Nasarawa, Nigeria</span>
+</div>
+</div>
+<div class="actions">
+<a class="button primary" href="http://datascienceportfol.io/NkuGeorge" rel="noopener noreferrer" target="_blank">Data Science Portfolio</a>
+<a class="button" href="https://sites.google.com/view/georgy-com/home" rel="noopener noreferrer" target="_blank">Google Site</a>
+</div>
+</div>
+</div>
+</div>
+</section><section class="site-section" id="projects">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="section-kicker">Things I've built</p>
+<h2>Selected Projects</h2>
+</div>
+<p class="section-intro">
+                    A selection of data science, machine learning, statistical analysis
+                    and business intelligence projects demonstrating practical application
+                    of quantitative methods.
+                </p>
+</div>
+<div class="project-grid">
+<!-- PROJECT 1 -->
+<article class="project-card featured">
+<img alt="Logistics Operations Dashboard" class="project-image" src="images/Logistics.jpeg"/>
+<p class="mini-label">Business Intelligence</p>
+<h3>Logistics Operations Intelligence</h3>
+<p>
+<strong>
+                            Optimising Fleet and Logistics Operations Through
+                            Data-Driven Decision Intelligence.
+                        </strong>
+</p>
+<p>
+                        Developed an interactive logistics analytics solution focused
+                        on fleet operations, drivers, trucks, customers, facilities
+                        and operational performance.
+                    </p>
+<div class="tags">
+<span class="tag">Power BI</span>
+<span class="tag">Data Modelling</span>
+<span class="tag">DAX</span>
+<span class="tag">Operational Analytics</span>
+<span class="tag">Interactive Dashboards</span>
+</div>
+<div class="actions">
+<a class="button primary" href="https://github.com/georgy-com/Logistics-Operations-Capstone-Project-.git" rel="noopener noreferrer" target="_blank">View on GitHub</a>
+</div>
+</article>
+<!-- PROJECT 2 -->
+<article class="project-card">
+<img alt="Diabetes Risk Prediction Project" class="project-image" src="images/diabet.jpg"/>
+<p class="mini-label">Health Data Science</p>
+<h3>Diabetes Risk Prediction</h3>
+<p>
+<strong>
+                            Predicting Diabetes Risk Using Routine Clinical
+                            and Anthropometric Indicators.
+                        </strong>
+</p>
+<p>
+                        Applied statistical and machine-learning techniques to investigate
+                        patterns associated with diabetes risk using routinely available
+                        clinical and anthropometric indicators.
+                    </p>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">EDA</span>
+<span class="tag">Statistical Modelling</span>
+<span class="tag">Machine Learning</span>
+<span class="tag">Model Evaluation</span>
+</div>
+<div class="actions">
+<a class="button primary" href="https://github.com/georgy-com/Diabetes-Risk-Prediction-Using-Routine-Clinical-and-Anthropometric-Indicators.git" rel="noopener noreferrer" target="_blank">View on GitHub</a>
+</div>
+</article>
+<!-- PROJECT 3 -->
+<article class="project-card">
+<img alt="Customer Churn Analysis Dashboard" class="project-image" src="images/Churn.png"/>
+<p class="mini-label">Business Analytics</p>
+<h3>Customer Churn Analysis &amp; Prediction</h3>
+<p>
+<strong>
+                            Identifying Customer Churn Drivers Through Statistical
+                            Analysis, Predictive Modelling and Business Intelligence.
+                        </strong>
+</p>
+<p>
+                        Analysed customer demographics, contracts, services, payment
+                        behaviour and other characteristics to identify patterns
+                        associated with customer attrition.
+                    </p>
+<div class="tags">
+<span class="tag">Power BI</span>
+<span class="tag">SQL</span>
+<span class="tag">Excel</span>
+<span class="tag">Predictive Analytics</span>
+<span class="tag">Customer Segmentation</span>
+<span class="tag">Business Intelligence</span>
+</div>
+<div class="actions">
+<a class="button primary" href="https://github.com/georgy-com/TeleCom-Customer-Churn-Analysis.git" rel="noopener noreferrer" target="_blank">View on GitHub</a>
+</div>
+</article>
+<!-- PROJECT 4 -->
+<article class="project-card">
+<img alt="Nigerian Crude Oil Forecasting" class="project-image" src="images/oil.avif"/>
+<p class="mini-label">Time-Series Analysis</p>
+<h3>Nigerian Crude Oil Forecasting</h3>
+<p>
+<strong>
+                            Forecasting Nigerian Crude Oil Production and
+                            Exports Using Time-Series Analysis.
+                        </strong>
+</p>
+<p>
+                        Applied time-series methods to examine historical trends
+                        in Nigerian crude oil production, exports and related
+                        economic indicators.
+                    </p>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">Time-Series Analysis</span>
+<span class="tag">ARIMA</span>
+<span class="tag">Forecasting</span>
+<span class="tag">Model Diagnostics</span>
+</div>
+<div class="actions">
+<a class="button primary" href="https://github.com/georgy-com/Crude-oil-Time-series-Modelling.git" rel="noopener noreferrer" target="_blank">View on GitHub</a>
+</div>
+</article>
+<!-- PROJECT 5 -->
+<article class="project-card">
+<img alt="COVID-19 Unemployment Analysis in India" class="project-image" src="images/covid19.jpg"/>
+<p class="mini-label">Economic Data Analysis</p>
+<h3>COVID-19 Unemployment Analysis in India</h3>
+<p>
+<strong>
+                            Time-Series Analysis of Unemployment Trends During
+                            the COVID-19 Pandemic in India.
+                        </strong>
+</p>
+<p>
+                        Analyzed unemployment trends in India during the COVID-19
+                        pandemic using time-series methods to examine changes in
+                        unemployment patterns over time. The project explored temporal
+                        trends and fluctuations in unemployment and demonstrated the
+                        application of statistical analysis to real-world economic data.
+                    </p>
+<div class="tags">
+<span class="tag">Time-Series Analysis</span>
+<span class="tag">Trend Analysis</span>
+<span class="tag">EDA</span>
+<span class="tag">Statistical Analysis</span>
+<span class="tag">Data Visualization</span>
+<span class="tag">Python</span>
+<span class="tag">Pandas &amp; NumPy</span>
+<span class="tag">Matplotlib</span>
+</div>
+<div class="actions">
+<a class="button primary" href="https://github.com/georgy-com/COVID19_Unemployment_Analysis_in_India.git" rel="noopener noreferrer" target="_blank">View on GitHub</a>
+</div>
+</article>
+</div>
+</div>
+</section><section class="site-section" id="research">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="section-kicker">Academic work</p>
+<h2>Research</h2>
+</div>
+<p class="section-intro">
+                    Research interests at the intersection of statistics, data science,
+                    machine learning and evidence-based decision making.
+                </p>
+</div>
+<div class="research-grid">
+<article class="research-card">
+<h3>Research Interests</h3>
+<ul class="research-list">
+<li>Scientific Research Methods</li>
+<li>Statistical Data Analysis</li>
+<li>Supervised &amp; Unsupervised Machine Learning</li>
+<li>Big Data Analytics</li>
+<li>Survival Analysis</li>
+<li>Biostatistics &amp; Health Data Science</li>
+<li>Quantitative Research</li>
+</ul>
+</article>
+<article class="research-card">
+<h3>Research Focus</h3>
+<p>
+                        My research interests lie at the intersection of statistics,
+                        data science, machine learning and evidence-based decision
+                        making for sustainable outcomes.
+                    </p>
+<p>
+                        I am particularly interested in developing statistical and
+                        data-intensive computational approaches that can support
+                        research and decision-making in health, education and other
+                        sustainable-development contexts.
+                    </p>
+<p>
+                        My academic foundation in Statistics supports an interest in
+                        statistical learning, biostatistics, predictive modelling,
+                        time-series analysis and computational research.
+                    </p>
+<div class="actions">
+<a class="button primary" href="#contact">Discuss Research</a>
+<a class="button" href="https://orcid.org/0009-0006-4637-4632" rel="noopener noreferrer" target="_blank">ORCID</a>
+</div>
+</article>
+</div>
+</div>
+</section><section class="site-section" id="skills">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="section-kicker">What I work with</p>
+<h2>Skills &amp; Expertise</h2>
+</div>
+<p class="section-intro">
+                    Combining statistical expertise, computational techniques and
+                    data-driven problem solving across research and business contexts.
+                </p>
+</div>
+<div class="skill-grid">
+<article class="skill-card">
+<h3>Statistical &amp; Research Methods</h3>
+<ul class="skill-list">
+<li>Statistical Inference</li>
+<li>Hypothesis Testing</li>
+<li>Regression Analysis</li>
+<li>Predictive Modelling</li>
+<li>Multivariate Analysis</li>
+<li>Factor Analysis</li>
+<li>Time-Series Analysis</li>
+<li>Forecasting</li>
+<li>Probability</li>
+<li>Statistical Modelling</li>
+<li>Bayesian Inference</li>
+<li>Causal Inference</li>
+<li>Biostatistics</li>
+<li>Quantitative Research</li>
+</ul>
+</article>
+<article class="skill-card">
+<h3>Data Science &amp; Machine Learning</h3>
+<ul class="skill-list">
+<li>Data Preprocessing</li>
+<li>Exploratory Data Analysis</li>
+<li>Feature Engineering</li>
+<li>Feature Selection</li>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+<li>Classification</li>
+<li>Regression</li>
+<li>Model Training</li>
+<li>Model Tuning</li>
+<li>Model Evaluation</li>
+<li>Validation</li>
+</ul>
+</article>
+<article class="skill-card">
+<h3>Programming &amp; Analytics</h3>
+<ul class="skill-list">
+<li>Python</li>
+<li>Pandas</li>
+<li>NumPy</li>
+<li>Matplotlib</li>
+<li>Seaborn</li>
+<li>Scikit-learn</li>
+<li>R</li>
+<li>SPSS</li>
+<li>Minitab</li>
+<li>SQL</li>
+<li>Google Colab</li>
+<li>Jupyter Notebook</li>
+</ul>
+</article>
+<article class="skill-card">
+<h3>Data Visualisation &amp; Business Intelligence</h3>
+<ul class="skill-list">
+<li>Power BI</li>
+<li>DAX</li>
+<li>Power Query</li>
+<li>Data Modelling</li>
+<li>Interactive Dashboards</li>
+<li>Data Storytelling</li>
+<li>KPI Development</li>
+<li>Performance Analytics</li>
+<li>Statistical Visualisation</li>
+<li>Evidence-Based Decision Support</li>
+<li>Microsoft Excel</li>
+</ul>
+</article>
+</div>
+<div class="actions">
+<a class="button primary" href="https://docs.google.com/presentation/d/1sIMxyHuVI1g1e2g33wZNTm-Cl20V0dZY/edit?usp=sharing&amp;ouid=101484369057490016983&amp;rtpof=true&amp;sd=true" rel="noopener noreferrer" target="_blank">My Certifications</a>
+</div>
+</div>
+</section><section class="site-section" id="experience">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="section-kicker">Where I've worked</p>
+<h2>Relevant Work Experience</h2>
+</div>
+<p class="section-intro">
+                    Practical experience spanning machine learning, data visualization,
+                    statistical analysis and applied data science.
+                </p>
+</div>
+<div class="timeline">
+<article class="experience-item">
+<span class="timeline-dot"></span>
+<div class="experience-card">
+<div class="experience-meta">
+<div>
+<p class="experience-role">Machine Learning — Remote Intern</p>
+<h3>FlyRank AI</h3>
+</div>
+<span class="experience-date">07/2026 – Present</span>
+</div>
+<p class="experience-company">Machine Learning &amp; SEO Analytics</p>
+<ul>
+<li>
+                                Analyzed a 30,000-page Search Engine Optimization dataset in
+                                Google Colab, uncovering directional relationships between
+                                content freshness, impressions, Click-Through Rate, visibility,
+                                and ranking trends to generate data-driven optimization hypotheses.
+                            </li>
+<li>
+                                Formulated and implemented a machine-learning classification
+                                workflow for identifying potentially declining/stale pages,
+                                establishing a transparent baseline using 180+ days of content
+                                age and 500+ impressions, and defining target, proxy features,
+                                unit of analysis, and evaluation metrics.
+                            </li>
+</ul>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">Google Colab</span>
+<span class="tag">Machine Learning</span>
+<span class="tag">SEO Analytics</span>
+</div>
+</div>
+</article>
+<article class="experience-item">
+<span class="timeline-dot"></span>
+<div class="experience-card">
+<div class="experience-meta">
+<div>
+<p class="experience-role">Data Visualization Trainee — Remote Intern</p>
+<h3>Excelerate</h3>
+</div>
+<span class="experience-date">07/2026 – 08/2026</span>
+</div>
+<p class="experience-company">Data Analytics &amp; Visualization</p>
+<ul>
+<li>
+                                Analyzed over 5,730 opportunity records to identify trends in
+                                postings and allocations, providing actionable insights for
+                                stakeholders that improved customer engagement by 30%.
+                            </li>
+<li>
+                                Conducted Exploratory Data Analysis (EDA) using SQL, Excel,
+                                and Power BI to uncover recruitment patterns and key opportunity
+                                categories, improving dashboard and visualization report development.
+                            </li>
+</ul>
+<div class="tags">
+<span class="tag">SQL</span>
+<span class="tag">Excel</span>
+<span class="tag">Power BI</span>
+<span class="tag">EDA</span>
+</div>
+</div>
+</article>
+<article class="experience-item">
+<span class="timeline-dot"></span>
+<div class="experience-card">
+<div class="experience-meta">
+<div>
+<p class="experience-role">Data Scientist — Remote Intern</p>
+<h3>Code Alpha</h3>
+</div>
+<span class="experience-date">04/2026 – 06/2026</span>
+</div>
+<p class="experience-company">Applied Machine Learning &amp; Time-Series Analysis</p>
+<ul>
+<li>
+                                Built and evaluated Linear Regression and Random Forest models
+                                using scikit-learn to forecast sales from advertising expenditure.
+                                Achieved 80.2% accuracy, 79.6% precision, and 80.2% recall,
+                                demonstrating strong predictive capability.
+                            </li>
+<li>
+                                Performed Time series trend analysis, highlighting significant
+                                unemployment spikes during the national COVID-19 lockdown period
+                                (March–May 2020).
+                            </li>
+<li>
+                                Built a logistic regression model to predict used car selling prices
+                                using a dataset containing 301 vehicle records, achieving a Root
+                                Mean Square (RMSE) value of 0.61.
+                            </li>
+</ul>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">Scikit-learn</span>
+<span class="tag">Regression</span>
+<span class="tag">Random Forest</span>
+<span class="tag">Time Series</span>
+</div>
+</div>
+</article>
+<article class="experience-item">
+<span class="timeline-dot"></span>
+<div class="experience-card">
+<div class="experience-meta">
+<div>
+<p class="experience-role">Data Analyst — Volunteer</p>
+<h3>Department of Statistics, University of Calabar, Nigeria</h3>
+</div>
+<span class="experience-date">03/2024 – 11/2024</span>
+</div>
+<p class="experience-company">Statistical Analysis, Research Support &amp; Business Intelligence</p>
+<ul>
+<li>
+                                Collaborated with academic staff and undergraduate students to
+                                analyze datasets for 20+ research projects, applying R, SPSS,
+                                and Minitab for data cleaning, statistical analysis, hypothesis
+                                testing, and interpretation, contributing to successful project
+                                completion and research quality.
+                            </li>
+<li>
+                                Designed and developed 10+ interactive Power BI dashboards that
+                                transformed complex statistical findings into intuitive
+                                visualizations, improving the effectiveness of departmental
+                                seminars and enabling clearer communication of research insights
+                                to staff and students.
+                            </li>
+</ul>
+<div class="tags">
+<span class="tag">R</span>
+<span class="tag">SPSS</span>
+<span class="tag">Minitab</span>
+<span class="tag">Power BI</span>
+<span class="tag">Research Analytics</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section><section class="site-section" id="contact">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="section-kicker">Let's connect</p>
+<h2>Get In Touch</h2>
+</div>
+<p class="section-intro">
+                    I am open to opportunities involving data science, statistical
+                    research, machine learning, analytics, business intelligence
+                    and quantitative research.
+                </p>
+</div>
+<div class="contact-grid">
+<article class="contact-card">
+<h3>Professional Links</h3>
+<p>
+                        Explore my work, professional profile and social channels.
+                    </p>
+<ul class="contact-links">
+<li>
+<a href="https://github.com/georgy-com" rel="noopener noreferrer" target="_blank">
+<span>GitHub</span>
+<span>↗</span>
+</a>
+</li>
+<li>
+<a href="https://linkedin.com/in/geolecon" rel="noopener noreferrer" target="_blank">
+<span>LinkedIn</span>
+<span>↗</span>
+</a>
+</li>
+<li>
+<a href="https://wa.me/2349025620573" rel="noopener noreferrer" target="_blank">
+<span>WhatsApp</span>
+<span>↗</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/EkongNku" rel="noopener noreferrer" target="_blank">
+<span>X (Twitter)</span>
+<span>↗</span>
+</a>
+</li>
+</ul>
+</article>
+<article class="contact-card">
+<h3>Start a Conversation</h3>
+<p>
+                        For research collaborations, data science opportunities,
+                        analytics projects or professional enquiries:
+                    </p>
+<div class="actions">
+<a class="button primary" href="mailto:nkuekong@gmail.com">Email Me</a>
+<a class="button" href="https://wa.me/2349025620573" rel="noopener noreferrer" target="_blank">Message on WhatsApp</a>
+</div>
+<p style="margin-top:28px;">
+<strong>Email:</strong><br/>
+<a class="contact-email" href="mailto:nkuekong@gmail.com">
+                            nkuekong@gmail.com
+                        </a>
+</p>
+</article>
+</div>
+</div>
+</section></main>
+<footer>
+<div class="container">
+<p>© 2026 Nku George Ekong. Built for data, research and impact.</p>
+</div>
+</footer>
+<script>
+    // Highlight the navigation item for the section currently in view.
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-<script src="assets/js/jquery.min.js"></script>
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove("active"));
 
-<script src="assets/js/browser.min.js"></script>
+                    const activeLink = document.querySelector(
+                        '.nav-links a[href="#' + entry.target.id + '"]'
+                    );
 
-<script src="assets/js/breakpoints.min.js"></script>
+                    if (activeLink) activeLink.classList.add("active");
+                }
+            });
+        },
+        {
+            rootMargin: "-35% 0px -55% 0px",
+            threshold: 0
+        }
+    );
 
-<script src="assets/js/util.js"></script>
-
-<script src="assets/js/main.js"></script>
-
-
+    sections.forEach(section => observer.observe(section));
+</script>
 </body>
 </html>
-```
